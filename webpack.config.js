@@ -1,6 +1,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: ['./src/app.js', './src/app.scss'],
@@ -11,7 +12,9 @@ module.exports = {
     mode: 'development',
     devServer: {
         open: true,
-        port: 8081
+        port: 8081,
+        contentBase: path.join(__dirname, 'src'),
+        watchContentBase: true,
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -20,10 +23,20 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: './src/html'
+                    from: './src/public'
                 }
             ]
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/html/index.html',
+            inject: 'body'
+        }),
+        // new HtmlWebpackPlugin({
+        //     filename: 'cart.html',
+        //     template: './src/html/cart.html',
+        //     inject: 'body'
+        // })
     ],
     module: {
         rules: [

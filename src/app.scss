@@ -1,16 +1,51 @@
-body {
-    min-height: 100vh;
-    background-image: url(./img/bg.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #043e58;
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+@import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+.header {
+    .nav-link {
+        padding: .5rem 2rem !important;
+    }
+    .cart-informer {
+        .badge {
+            font-size: .67rem;
+            position: absolute;
+            transform: translate(-15px, 3px);
+        }
+    }
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.product {
+    &-image {
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
-.block {
-    backdrop-filter: blur(20px);
+
+.add-to-cart-button {
+    display: flex;
+    align-items: center;
+    &::before {
+        display: block;
+        content: 'Add to cart'
+    }
+    &::after {
+        font-family: bootstrap-icons;
+        display: block;
+        margin-left: 1rem;
+        font-size: 1.25em;
+        content: '\f23e'
+    }
+    &:disabled::before {
+        display: block;
+        content: 'Already in cart'
+    }
+    &:disabled::after {
+        font-family: bootstrap-icons;
+        display: block;
+        margin-left: 1rem;
+        font-size: 1.25em;
+        content: '\f239'
+    }
 }
