@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap');
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+a,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    font-family: 'Montserrat', sans-seri;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+
+}
+a{
+    text-decoration: none;
+}
+// a {
+//   text-decoration: none;
+//   font-family: 'PT Sans Caption', sans-serif;
+// }
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+.container {
+    max-width: 1290px;
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+
+
+header{
+    padding-top: 45px;
+    padding-bottom: 45px;
+    // background: ;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo_block{
+        display: flex;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: #000000;
+
+        svg{
+            margin-right: 30px;
+        }
+
+    }
+    .burger_menu{
+        display: flex;
+        align-items: center;
+        .burger_sign{
+            margin-right: 18px;
+        }
+    }
+    .burger{
+        position: relative;
+        height: 24px;
+        width: 80px;
+        transition: ease 300ms;
+        span{
+            position: absolute;
+            display: block;
+            background: #000000;
+            height: 4px;
+            left: 0;
+            transition: ease 300ms;
+            &:nth-child(1){
+                width: 80px;
+              
+              
+                top: 0;
+               
+            }
+            &:nth-child(2){
+                width: 60px;
+                top: calc(50% - 2px);
+               
+            }
+            &:nth-child(3){
+                width: 40px;
+               bottom: 0;
+            }
+        }
+    }
+
+   
+}
+
+
+.menu_hiden{
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    // width: 50%;
+    background: #14273C;
+    transition: ease 300ms;
+    &.show{
+        bottom: 150%;
+        
+        top: -150%;
+    }
+}
+
+body{
+    &.menu_open{
+        overflow: hidden;
+
+        header .burger.show{
+            span{
+                position: absolute;
+                display: block;
+                background: #FFFFFF;
+                height: 4px;
+                left: 0;
+                &:nth-child(1){
+                    width:30px;
+                    transform: rotate(45deg);
+                    top: 10px;
+                   
+                }
+                &:nth-child(2){
+                    width: 0px;
+                    height: 0px;
+                    top: calc(50% - 2px);
+                   
+                }
+                &:nth-child(3){
+                    width: 30px;
+                   bottom: 10px;
+                   transform: rotate(-45deg);
+                }
+            }
+        }
+
+    }
+}
