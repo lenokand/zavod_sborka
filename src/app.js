@@ -1,11 +1,11 @@
-// import Swiper JS
-import Swiper, { Navigation, Pagination } from 'swiper';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// // import Swiper JS
+// import Swiper, { Navigation, Pagination } from 'swiper';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 
-// configure Swiper to use modules
-Swiper.use([Navigation, Pagination]);
+// // configure Swiper to use modules
+// Swiper.use([Navigation, Pagination]);
 
 
 // бургер
