@@ -36,7 +36,38 @@ module.exports = {
             filename: 'contentnaya.html',
             template: './src/html/contentnaya.html',
             inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            template: './src/html/about.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'products.html',
+            template: './src/html/products.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'news.html',
+            template: './src/html/news.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'social.html',
+            template: './src/html/social.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contacts.html',
+            template: './src/html/contacts.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'filial.html',
+            template: './src/html/filial.html',
+            inject: 'body'
         })
+
     ],
     module: {
         rules: [
