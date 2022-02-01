@@ -29,7 +29,7 @@ module.exports = {
             ]
         }),
         new ImageminPlugin({
-            
+            disable: process.env.NODE_ENV !== 'production', // Disable during development
             test: /\.(jpe?g|png|gif|svg)$/i ,
             pngquant: {
                 quality: '50-60'
