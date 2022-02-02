@@ -1691,6 +1691,7 @@ footer {
 
     .breadcrumbs {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         padding-bottom: 65px;
 
@@ -2150,6 +2151,13 @@ table {
 }
 
 @media screen and (max-width: 700px) {
+    .main_inner .breadcrumbs .splitter{
+        display: none;
+    }
+    .main_inner .breadcrumbs .breadcrumb_item{
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
     .gallery {
         margin-bottom: 40px;
     }
@@ -2226,6 +2234,9 @@ table {
 .news.products {
     .products_block .products_item{
         width: calc(25% - 30px);
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
         img{
             height: 200px;
         }
